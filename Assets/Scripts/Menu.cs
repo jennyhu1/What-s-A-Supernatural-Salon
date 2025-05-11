@@ -11,7 +11,7 @@ public class Menu : MonoBehaviour
         Debug.Log("StartGame button clicked!");
         if (titlePanel != null)
             titlePanel.SetActive(false);
-        LoadingScreen.Instance.Load("PimpleRemove");
+        LoadingScreen.Instance.Load("Salon");
     }
 
     public void GoToCredits()
