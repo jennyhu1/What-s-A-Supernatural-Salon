@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public bool inProximity = false;
     public OwnerBehavior UIManager;
+    public GameObject interactScreen;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         UIManager = GameObject.Find("UIManager").GetComponent<OwnerBehavior>();
+        interactScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -57,12 +59,14 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other){
         if (other.gameObject.CompareTag("Owner")){
             inProximity = true;
+            interactScreen.SetActive(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D other){
         if (other.gameObject.CompareTag("Owner")){
             inProximity = false;
+            interactScreen.SetActive(false);
         }
     }
 }
