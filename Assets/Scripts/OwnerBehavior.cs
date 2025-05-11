@@ -16,12 +16,16 @@ public class OwnerBehavior : MonoBehaviour
 
     private Coroutine typingCoroutine;
     
+    public AudioSource gameAudio;
+    public AudioClip backgroundAudio;
+    
     // Start is called before the first frame update
     void Start()
     {
         //lines.AddRange(new List<string> {"Hey, you're the new hire right?", "Listen, today is going to be a busy day.", "So I need you to accept anyone that enters the building, okay?"});
         index = 0;
         dialogueContainer.SetActive(false);
+        gameAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
