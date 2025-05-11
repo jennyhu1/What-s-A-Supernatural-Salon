@@ -24,8 +24,11 @@ public class VIDEDemoPlayer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<VIDE_Assign>() != null)
+        Debug.Log("Hi");
+        if (other.GetComponent<VIDE_Assign>() != null) {
             inTrigger = other.GetComponent<VIDE_Assign>();
+            Debug.Log("Hey");
+        }
     }
 
     void OnTriggerExit()
@@ -35,8 +38,8 @@ public class VIDEDemoPlayer : MonoBehaviour
 
     void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -45,9 +48,9 @@ public class VIDEDemoPlayer : MonoBehaviour
         //Only allow player to move and turn if there are no dialogs loaded
         if (!VD.isActive)
         {
-            transform.Rotate(0, Input.GetAxis("Mouse X") * 5, 0);
-            float move = Input.GetAxisRaw("Vertical");
-            transform.position += transform.forward * 7 * move * Time.deltaTime;
+            //transform.Rotate(0, Input.GetAxis("Mouse X") * 5, 0);
+            //float move = Input.GetAxisRaw("Vertical");
+            //transform.position += transform.forward * 7 * move * Time.deltaTime;
             //blue.SetFloat("speed", move);
         }
 
@@ -58,6 +61,7 @@ public class VIDEDemoPlayer : MonoBehaviour
         }
 
         //Hide/Show cursor
+        /*
         if (Input.GetMouseButtonDown(0))
         {
             Cursor.visible = !Cursor.visible;
@@ -66,6 +70,7 @@ public class VIDEDemoPlayer : MonoBehaviour
             else
                 Cursor.lockState = CursorLockMode.Locked;
         }
+        */
     }
 
     //Casts a ray to see if we hit an NPC and, if so, we interact
