@@ -10,13 +10,15 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRb;
     private Animator playerAnimator;
 
-    public 
+    public bool inProximity = false;
+    public OwnerBehavior UIManager;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+        UIManager = GameObject.Find("UIManager").GetComponent<OwnerBehavior>();
     }
 
     // Update is called once per frame
@@ -44,8 +46,23 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetInteger("X", horizontalInput * speed);
         playerAnimator.SetInteger("Y", verticalInput * speed);
         
+        if (Input.GetKeyDown("e") && inProximity){
+            UIManager.StartDialogue();
+        }
         /*  IMPORTANT NOTE: maybe stick with floats instead of integers because when instantly switching 
             from moving one side to the other the sprite doesnt change
         */
+    }
+
+    private void OnTriggerEnter2D(Collider2D other){
+        if (other.gameObject.CompareTag("Owner")){
+            inProximity = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other){
+        if (other.gameObject.CompareTag("Owner")){
+            inProximity = false;
+        }
     }
 }

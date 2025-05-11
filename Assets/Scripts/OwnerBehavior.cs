@@ -21,12 +21,15 @@ public class OwnerBehavior : MonoBehaviour
     {
         //lines.AddRange(new List<string> {"Hey, you're the new hire right?", "Listen, today is going to be a busy day.", "So I need you to accept anyone that enters the building, okay?"});
         index = 0;
+        dialogueContainer.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("space") && dialogueContainer.activeInHierarchy){
+            DisplayNextLine();
+        }
     }
 
     public void StartDialogue(){
@@ -43,6 +46,8 @@ public class OwnerBehavior : MonoBehaviour
             return;
         }
 
+        typingCoroutine = StartCoroutine(TypeText(lines[index]));
+        index += 1;
     }
 
     IEnumerator TypeText(string text)
@@ -58,6 +63,5 @@ public class OwnerBehavior : MonoBehaviour
     public void EndDialogue(){
         dialogueContainer.SetActive(false);
     }
-
 
 }
