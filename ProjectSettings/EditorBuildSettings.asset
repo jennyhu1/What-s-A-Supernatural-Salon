@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: d81e307f7e2244055b0648d5704f31cc
+  - enabled: 0
+    path: Assets/Scenes/Loading.unity
+    guid: 4ca9aec02ffb948c9bbab365190212f3
+  - enabled: 1
+    path: Assets/Scenes/PimpleRemove.unity
+    guid: 1506589d72f294c4aa9084577e18a3b6
   m_configObjects: {}
