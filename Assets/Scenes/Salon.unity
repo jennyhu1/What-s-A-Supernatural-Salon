@@ -4360,6 +4360,52 @@ MonoBehaviour:
   inTrigger: {fileID: 0}
   demo_Items: []
   demo_ItemInventory: []
+--- !u!1 &1292179290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1292179292}
+  - component: {fileID: 1292179291}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1292179291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292179290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef188015b31954d03bed2e8ec4afaf26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titlePanel: {fileID: 0}
+  OwnerNPC: {fileID: 1534740752}
+--- !u!4 &1292179292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292179290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 573.793, y: 213.52649, z: 5.544568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1472453840
 GameObject:
   m_ObjectHideFlags: 0
@@ -5369,6 +5415,67 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1510832828
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1418655148552897180, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_Name
+      value: LoadingScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418655148552897180, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998474065936841431, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998474065936841431, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998474065936841431, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998474065936841431, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998474065936841431, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998474065936841431, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998474065936841431, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998474065936841431, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998474065936841431, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3998474065936841431, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e87a3aa568aef2e438b568f417f98e4d, type: 3}
 --- !u!1 &1534740752
 GameObject:
   m_ObjectHideFlags: 0
@@ -7723,14 +7830,17 @@ MonoBehaviour:
   dialogueContainer: {fileID: 811927483}
   dialogueText: {fileID: 1076499823}
   nextButton: {fileID: 0}
+  menu: {fileID: 1292179291}
+  speaking: 0
   lines:
   - Hey, you're the new hire right?
   - Listen, today is going to be a busy day for you, as I have to run out.
   - I need you to accept any customer that walks in here, okay?
   - Hopefully it'll be easy and you're competent enough for it.
   - Now get to work!
-  gameAudio: {fileID: 0}
-  backgroundAudio: {fileID: 0}
+  gameAudio: {fileID: 1874876568}
+  backgroundAudio: {fileID: 8300000, guid: f705f148b1d8bc242b442c4ddde90532, type: 3}
+  textAudio: {fileID: 8300000, guid: 9e4994361cdcef14f99d00870acd0f54, type: 3}
 --- !u!82 &1874876568
 AudioSource:
   m_ObjectHideFlags: 0
@@ -8428,3 +8538,5 @@ SceneRoots:
   - {fileID: 182559903}
   - {fileID: 1874876566}
   - {fileID: 1096803821}
+  - {fileID: 1292179292}
+  - {fileID: 1510832828}
