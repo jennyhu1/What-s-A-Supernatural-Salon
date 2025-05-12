@@ -22,7 +22,7 @@ public class Menu : MonoBehaviour
     }
 
     public void SalonTrans(){
-        LoadingScreen.Instance.Load("Salon");
+        LoadingScreen.Instance.Load("PimpleRemove");
         OwnerNPC.SetActive(false);
     }
 }

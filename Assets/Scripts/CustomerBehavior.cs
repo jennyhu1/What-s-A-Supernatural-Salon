@@ -4,14 +4,13 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class OwnerBehavior : MonoBehaviour
+public class CustomerBehavior : MonoBehaviour
 {
     public GameObject dialogueContainer;
     public TextMeshProUGUI dialogueText;
-    //public GameObject readyButton;
-    //public Button button;
-    //public Menu menu;
-    public GameObject floorOwner;
+    public GameObject readyButton;
+    public Button button;
+    public Menu menu;
     public GameObject floorSlime;
     public bool speaking = false;
     public List<string> lines = new List<string>();
@@ -23,18 +22,17 @@ public class OwnerBehavior : MonoBehaviour
     private Coroutine speechCoroutine;
     
     public AudioSource gameAudio;
-    //public AudioClip backgroundAudio;
     public AudioClip textAudio;
     
     // Start is called before the first frame update
     void Start()
     {
-        //lines.AddRange(new List<string> {"Hey, you're the new hire right?", "Listen, today is going to be a busy day.", "So I need you to accept anyone that enters the building, okay?"});
+        floorSlime.SetActive(false);
         index = 0;
         dialogueContainer.SetActive(false);
         gameAudio = GetComponent<AudioSource>();
-        //readyButton.SetActive(false);
-        //button.onClick.AddListener(nextScene);
+        readyButton.SetActive(false);
+        button.onClick.AddListener(nextScene);
     }
 
     // Update is called once per frame
@@ -80,22 +78,20 @@ public class OwnerBehavior : MonoBehaviour
 
     IEnumerator TextSound(bool talk){
         while (talk){
-            gameAudio.PlayOneShot(textAudio, 1.0f);
+            gameAudio.PlayOneShot(textAudio, 0.5f);
             yield return new WaitForSeconds(0.09f);
         }
     }
 
     public void EndDialogue(){
         dialogueContainer.SetActive(false);
-        floorOwner.SetActive(false);
-        floorSlime.SetActive(true);
-        //readyButton.SetActive(true);
+        readyButton.SetActive(true);
         //menu.SalonTrans();
     }
 
-    /*private void nextScene(){
+    private void nextScene(){
         readyButton.SetActive(false);
         menu.SalonTrans();
-    }*/
+    }
 
 }
