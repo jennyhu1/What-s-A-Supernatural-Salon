@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnimator;
 
     public bool inProximity = false;
+    public bool tylenol = false;
     public OwnerBehavior UIManager;
+    public CustomerBehavior customer1;
     public GameObject interactScreen;
 
     // Start is called before the first frame update
@@ -51,6 +53,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("e") && inProximity){
             UIManager.StartDialogue();
         }
+        if (Input.GetKeyDown("e") && tylenol){
+            customer1.StartDialogue();
+        }
         /*  IMPORTANT NOTE: maybe stick with floats instead of integers because when instantly switching 
             from moving one side to the other the sprite doesnt change
         */
@@ -61,12 +66,20 @@ public class PlayerController : MonoBehaviour
             inProximity = true;
             interactScreen.SetActive(true);
         }
+        if (other.gameObject.CompareTag("Customer")){
+            interactScreen.SetActive(true);
+            tylenol = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other){
         if (other.gameObject.CompareTag("Owner")){
             inProximity = false;
             interactScreen.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("Customer")){
+            interactScreen.SetActive(false);
+            tylenol = false;
         }
     }
 }

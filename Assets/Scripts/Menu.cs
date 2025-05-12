@@ -6,6 +6,8 @@ using Esper.Freeloader;
 public class Menu : MonoBehaviour
 {
     public GameObject titlePanel;
+    public GameObject OwnerNPC;
+
     public void StartGame()
     {
         Debug.Log("StartGame button clicked!");
@@ -17,5 +19,10 @@ public class Menu : MonoBehaviour
     public void GoToCredits()
     {
         // LoadingScreen.Instance.Load("CreditsScene");
+    }
+
+    public void SalonTrans(){
+        LoadingScreen.Instance.Load("PimpleRemove");
+        OwnerNPC.SetActive(false);
     }
 }

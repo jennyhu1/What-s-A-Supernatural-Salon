@@ -8,16 +8,23 @@ public class OwnerBehavior : MonoBehaviour
 {
     public GameObject dialogueContainer;
     public TextMeshProUGUI dialogueText;
-    public Button nextButton;
+    //public GameObject readyButton;
+    //public Button button;
+    //public Menu menu;
+    public GameObject floorOwner;
+    public GameObject floorSlime;
+    public bool speaking = false;
     public List<string> lines = new List<string>();
     private int index;
 
-    private float typingSpeed = 0.02f;
+    private float typingSpeed = 0.03f;
 
     private Coroutine typingCoroutine;
+    private Coroutine speechCoroutine;
     
     public AudioSource gameAudio;
-    public AudioClip backgroundAudio;
+    //public AudioClip backgroundAudio;
+    public AudioClip textAudio;
     
     // Start is called before the first frame update
     void Start()
@@ -26,6 +33,8 @@ public class OwnerBehavior : MonoBehaviour
         index = 0;
         dialogueContainer.SetActive(false);
         gameAudio = GetComponent<AudioSource>();
+        //readyButton.SetActive(false);
+        //button.onClick.AddListener(nextScene);
     }
 
     // Update is called once per frame
@@ -44,6 +53,8 @@ public class OwnerBehavior : MonoBehaviour
     public void DisplayNextLine(){
         if (typingCoroutine != null){
             StopCoroutine(typingCoroutine);
+            StopCoroutine(speechCoroutine);
+            speaking = false;
         }
         if (index == lines.Count){
             EndDialogue();
@@ -51,6 +62,8 @@ public class OwnerBehavior : MonoBehaviour
         }
 
         typingCoroutine = StartCoroutine(TypeText(lines[index]));
+        speaking = true;
+        speechCoroutine = StartCoroutine(TextSound(speaking));
         index += 1;
     }
 
@@ -62,10 +75,27 @@ public class OwnerBehavior : MonoBehaviour
             dialogueText.text += c;
             yield return new WaitForSeconds(typingSpeed);
         }
+        StopCoroutine(speechCoroutine);
+    }
+
+    IEnumerator TextSound(bool talk){
+        while (talk){
+            gameAudio.PlayOneShot(textAudio, 1.0f);
+            yield return new WaitForSeconds(0.09f);
+        }
     }
 
     public void EndDialogue(){
         dialogueContainer.SetActive(false);
+        floorOwner.SetActive(false);
+        floorSlime.SetActive(true);
+        //readyButton.SetActive(true);
+        //menu.SalonTrans();
     }
+
+    /*private void nextScene(){
+        readyButton.SetActive(false);
+        menu.SalonTrans();
+    }*/
 
 }
