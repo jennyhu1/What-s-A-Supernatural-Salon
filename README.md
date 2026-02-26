@@ -1,14 +1,43 @@
-This is for the CS325 Final Project
+# What’s a Supernatural Salon
 
-The bare-bones of this project is reduced to 1-2 days of "working", with some different monsters and minigames
-(I am terrified of overscoping it's already happened to me twice with the game jams).
-If we complete the game and it's playable, we can focus on stretch goals next. For now, don't worry about them.
+An interactive Unity-based game where players take on the role of a new salon worker serving supernatural clients. The game combines multiple mini-game mechanics, custom UI systems, and structured scene management to create an engaging and stylized experience.
 
-To keep things simple we won't be using the Projects or Issues tab, unless you like its organization and want it for this project. I'll add it then
-When you work on the code and project, use a separate branch dedicated to your changes, and even make more branches to make sure all you changes work together.
-After checking over conflicts, we'll handle merge conflicts to main.
+## Overview
 
-We got this y'all.
+This project was developed as a team-based game design project. The goal was to design and implement a cohesive interactive system that integrates gameplay logic, UI flow, and state management within Unity.
 
-(video for laughs)
-https://www.youtube.com/watch?v=dIiHSsAwKzY
+The game features:
+- Multiple interactive mini-games
+- Custom UI components and scoring systems
+- Scene transitions and state control
+- Themed character interactions and animations
+
+## My Role & Contributions
+
+Team Project – My primary responsibilities included:
+
+- Designing core gameplay logic and interaction flow
+- Implementing UI systems and player input handling
+- Structuring scene transitions and game state management
+- Contributing to system architecture and modular organization
+- Debugging and integrating features across branches
+
+## Technical Details
+
+- Engine: Unity
+- Language: C#
+- Architecture: Modular component-based design
+- Version Control: Git with collaborative branching and pull requests
+
+## Key Concepts Demonstrated
+
+- Object-oriented programming
+- Event-driven UI interaction
+- State management
+- Team-based version control workflow
+- Game loop and scene lifecycle control
+
+## Repository Notes
+
+This repository reflects a collaborative academic project. Commit history includes contributions from all team members.
+
